@@ -6,6 +6,7 @@ import { AiOutlineInfo } from 'react-icons/ai';
 import { BsDashLg } from 'react-icons/bs';
 import { FaEthereum } from 'react-icons/fa';
 import { endpointEnum } from '../enums/index';
+import moment from 'moment';
 import { useWebsocket } from '../custom-hooks/index';
 
 const { CRYPTO } = endpointEnum;
@@ -152,7 +153,7 @@ export const StatCard: FC<statCardPropType> = (props) => {
                         <div className='d-flex align-items-end'>
                             <Text
                                 label={ready ? String(cryptoPerUsd?.toFixed(2)) : '0'}
-                                className='text-size-24'
+                                className='text-size-32'
                                 style={{
                                     fontWeight: 'bold'
                                 }}
@@ -191,6 +192,13 @@ export const StatCard: FC<statCardPropType> = (props) => {
                             }}
                         />
                     </div>
+                    <Text
+                        label={`Last updated at ${moment().format('mm:ss')}`}
+                        className='text-size-10 mt-1'
+                        style={{
+                            fontStyle: 'italic'
+                        }}
+                    />
                 </Col>
             </Row>
         </Card>

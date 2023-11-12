@@ -2,7 +2,6 @@
 
 import './globals.scss';
 
-import { Inter } from 'next/font/google';
 import { Provider } from 'react-redux';
 import { Raleway } from 'next/font/google';
 import { store } from './store';
