@@ -6,30 +6,27 @@ import { AppDispatch } from './store/index';
 import { endpointEnum } from './enums/index';
 import { useEffect } from 'react';
 
-const { CRYPTO } = endpointEnum;
-
 export default function Home() {
+
+  const crypto_data: any = ['BTC-USD', 'ETH-USD'];
 
   return (
     <main className={'main'}>
       <Container>
         <Row>
-          <Col
-            lg='6'
-            xl='6'
-          >
-            <StatCard
-              crypto='BTC-USD'
-            />
-          </Col>
-          <Col
-            lg='6'
-            xl='6'
-          >
-            <StatCard
-              crypto='ETH-USD'
-            />
-          </Col>
+          {
+            crypto_data.map((crypto: 'BTC-USD' | 'ETH-USD', index: number) => (
+              <Col
+                key={index}
+                lg='6'
+                xl='6'
+              >
+                <StatCard
+                  crypto={crypto}
+                />
+              </Col>
+            ))
+          }
         </Row>
       </Container>
     </main>
