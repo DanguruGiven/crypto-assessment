@@ -1,0 +1,89 @@
+$primary-color                  : #2196f3;
+$color-blue                     : #2196f3;
+$color-black                    : #212121;
+$color-white                    : #ffffff;
+$color-red                      : #f44336;
+$color-green                    : #4caf50;
+$color-green-50                 : #a5d6a7;
+$color-gray                     : #9e9e9e;
+$color-gray-50                  : #eeeeee;
+
+$colors: 
+    'black'                     $color-black,
+    'blue'                      $color-blue,
+    'white'                     $color-white,
+    'red'                       $color-red,
+    'warning'                   $color-red,
+    'green'                     $color-green,
+    'success'                   $color-green,
+    'gray'                      $color-gray
+    ;
+
+// Text transform
+$text-transform: 
+    lowercase,
+    capitalize,
+    uppercase;
+
+// Font sizes
+$font-sizes: 
+    "10"                        0.625rem,
+    "11"                        0.6875rem,
+    "12"                        0.75rem,
+    "14"                        0.875rem,
+    "16"                        1rem,
+    "18"                        1.125rem,
+    "20"                        1.25rem,
+    "22"                        1.375rem,
+    "24"                        1.5rem,
+    "30"                        1.875rem,
+    "32"                        2rem,
+    "42"                        2.625rem,
+    "46"                        2.875rem;
+
+//Spacing
+$gutter-x :1.5rem;
+$gutter-y : 0;
+
+//Shadows
+$none : none;
+$shadow :0 8px 16px rgba(0, 0, 0, .15);
+$shadow-m :0px 5px 20px #1D1D1B1A;
+$shadow-sm :0 2px 4px rgba(0, 0, 0, .075);
+$shadow-lg :0 16px 48px rgba(0, 0, 0, .175);
+
+$shadows: "shadow-none"$none,
+    "shadow"$shadow,
+    "shadow-sm"$shadow-sm,
+    "shadow-lg"$shadow-lg;
+
+$spacing: "n-5" -3rem,
+    "n-4" -1.5rem,
+    "n-3" -1rem,
+    "n-2" -.5rem,
+    "n-1" -.25rem,
+    "0" 0rem,
+    "1" .25rem,
+    "2" .5rem,
+    "3" 1rem,
+    "4" 1.5rem,
+    "5" 3rem,
+    "32" 2rem;
+
+$positions: absolute, fixed, sticky, initial, inherit, static, revert, unset, relative;
+
+//Shadows
+$none : none;
+$shadow :0 8px 16px rgba(0, 0, 0, .15);
+$shadow-m :0px 5px 20px #1D1D1B1A;
+$shadow-sm :0 2px 4px rgba(0, 0, 0, .075);
+$shadow-lg :0 16px 48px rgba(0, 0, 0, .175);
+
+// Border radius
+$rounded-sm :8px;
+$rounded-md :16px;
+$rounded-lg :40px;
+
+$border-radius: "rounded-sm"$rounded-sm,
+    "rounded-md"$rounded-md,
+    "rounded-lg"$rounded-lg;

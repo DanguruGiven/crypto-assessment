@@ -1,0 +1,13 @@
+@import '../helpers/variables';
+
+//Shadows
+// E.g shadow-none {
+//     box-shadow: none;
+// }
+
+@each $name,
+$value in $shadows {
+    .#{$name} {
+        box-shadow: $value !important;
+    }
+}

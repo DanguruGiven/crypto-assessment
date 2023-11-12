@@ -1,0 +1,11 @@
+@import '../helpers/variables';
+
+// .rounded-md {
+//     border-radius: 1rem;
+// }
+
+@each $name, $value in $border-radius {
+    .#{$name} {
+        border-radius: $value;
+    }
+}

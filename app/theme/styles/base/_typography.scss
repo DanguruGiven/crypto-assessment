@@ -1,0 +1,88 @@
+@import '../helpers/variables';
+
+// .text-blue {
+//     color: #4296CB;
+// }
+
+@each $name,
+$color in $colors {
+    .text-#{$name} {
+        color: $color !important;
+    }
+}
+
+// .text-size-10 {
+//     font-size: 10px;
+// }
+
+@each $name,
+$size in $font-sizes {
+    .text-size-#{$name} {
+        font-size: $size !important;
+    }
+}
+
+// .text-capiatlize {
+//     text-transform: capitalize;
+// }
+
+@each $name in $text-transform {
+    .text-#{$name} {
+        text-transform: $name;
+    }
+}
+
+.h1 {
+    font-size: 2.125rem;
+}
+
+.h2 {
+    font-size: 1.75rem;
+}
+
+.h3 {
+    font-size: 1.5rem;
+}
+
+.h4 {
+    font-size: 1.25rem;
+}
+
+.h5 {
+    font-size: 1.125rem;
+}
+
+.h6 {
+    font-size: 1rem;
+}
+
+.body {
+    font-size: 0.875rem;
+}
+
+.caption {
+    font-size: 0.75rem;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-wrap {
+    word-wrap: break-word;
+}
+
+.truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    overflow: hidden;
+}

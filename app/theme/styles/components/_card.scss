@@ -1,0 +1,8 @@
+@import '../helpers/variables';
+
+.card {
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: $color-white;
+    color: $color-black;
+}
