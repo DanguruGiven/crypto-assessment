@@ -193,7 +193,7 @@ export const StatCard: FC<statCardPropType> = (props) => {
                         />
                     </div>
                     <Text
-                        label={`Last updated at ${moment().format('mm:ss')}`}
+                        label={`Last updated at ${moment().format('hh:mm:ss')}`}
                         className='text-size-10 mt-1'
                         style={{
                             fontStyle: 'italic'
