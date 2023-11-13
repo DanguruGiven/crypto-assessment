@@ -1,33 +1,48 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { cryptoType, liveChartInitialStateType } from '@/app/types/index';
 
-type initialStateType = {
-    last_updated: Date;
-    test_text: string;
-};
-
-const initialState: initialStateType = {
-    last_updated: new Date(),
-    test_text: 'hello',
+const initialState: liveChartInitialStateType = {
+    bitcoin: null,
+    bitcoin_last_updated: null,
+    ethereum: null,
+    ethereum_last_updated: null,
 };
 const liveChartSlice = createSlice({
     name: 'liveChart',
     initialState,
     reducers: {
-        setLastUpdatedTime: (state: initialStateType, action: PayloadAction<Date>) => {
+        setBitcoin: (state: liveChartInitialStateType, action: PayloadAction<cryptoType>) => {
             return {
                 ...state,
-                last_updated: action.payload,
+                bitcoin: action.payload,
             };
         },
-        setTestText: (state: initialStateType, action: PayloadAction<string>) => {
+        setBitcoinUpdatedTime: (state: liveChartInitialStateType, action: PayloadAction<Date>) => {
             return {
                 ...state,
-                test_text: action.payload,
+                bitcoin_last_updated: action.payload,
             };
-        }
+        },
+        setEthereum: (state: liveChartInitialStateType, action: PayloadAction<cryptoType>) => {
+            return {
+                ...state,
+                ethereum: action.payload,
+            };
+        },
+        setEthereumUpdatedTime: (state: liveChartInitialStateType, action: PayloadAction<Date>) => {
+            return {
+                ...state,
+                ethereum_last_updated: action.payload,
+            };
+        },
     }
 });
 
-export const { setLastUpdatedTime, setTestText } = liveChartSlice.actions;
+export const {
+    setBitcoin,
+    setBitcoinUpdatedTime,
+    setEthereum,
+    setEthereumUpdatedTime
+} = liveChartSlice.actions;
 
 export default liveChartSlice.reducer;

@@ -5,6 +5,7 @@ import { FC, HTMLAttributes, ReactElement, useEffect } from 'react';
 import { AiOutlineInfo } from 'react-icons/ai';
 import { BsDashLg } from 'react-icons/bs';
 import { FaEthereum } from 'react-icons/fa';
+import { cryptoType } from '../types/index';
 import { endpointEnum } from '../enums/index';
 import moment from 'moment';
 import { useWebsocket } from '../custom-hooks/index';
@@ -27,21 +28,15 @@ type statCardPropType = {
     crypto: 'ETH-USD' | 'BTC-USD';
 };
 
-type cryptoType = {
-    p: string;
-    q: string;
-    dc: string;
-    dd: string;
-    t: string;
-    s: string;
-}
-
 export const StatCard: FC<statCardPropType> = (props) => {
     const {
         crypto = 'ETH-USD',
     } = props;
 
     const [ready, value, send] = useWebsocket(`wss://ws.eodhistoricaldata.com/ws/${CRYPTO}?api_token=demo`);
+    // No need the to keep data in redux store store
+    // const { bitcoin } = useAppSelector((state: any) => state.liveChartReducer);
+    // const dispatch = useAppDispatch();
 
     let CryptoIcon: ReactElement | null;
     let bgColor: string = '#f5f5f5';
@@ -54,6 +49,7 @@ export const StatCard: FC<statCardPropType> = (props) => {
 
     const data: cryptoType | null = JSON.parse(value);
     const { p, q, dc, dd } = data || {};
+    // dispatch(updateCryptoData(crypto, ready ? data : null));
 
     let cryptoPerUsd: number = (Number(p)) / (Number(q));
     cryptoPerUsd = isNaN(cryptoPerUsd) ? 0 : cryptoPerUsd;
