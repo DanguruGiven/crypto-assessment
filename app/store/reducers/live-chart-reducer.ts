@@ -11,7 +11,7 @@ const liveChartSlice = createSlice({
     name: 'liveChart',
     initialState,
     reducers: {
-        setBitcoin: (state: liveChartInitialStateType, action: PayloadAction<cryptoType>) => {
+        setBitcoin: (state: liveChartInitialStateType, action: PayloadAction<cryptoType | null>) => {
             return {
                 ...state,
                 bitcoin: action.payload,
@@ -23,7 +23,7 @@ const liveChartSlice = createSlice({
                 bitcoin_last_updated: action.payload,
             };
         },
-        setEthereum: (state: liveChartInitialStateType, action: PayloadAction<cryptoType>) => {
+        setEthereum: (state: liveChartInitialStateType, action: PayloadAction<cryptoType | null>) => {
             return {
                 ...state,
                 ethereum: action.payload,
